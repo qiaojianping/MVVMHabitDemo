@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModle"
-            type="com.jianping.mymvvm.login.LoginViewModel" />
+            type="com.jianping.mymvvm.login.viewmodel.LoginViewModel" />
     </data>
 
     <RelativeLayout
@@ -56,6 +56,7 @@
                     android:layout_weight="1"
                     android:background="@null"
                     android:hint="请输入用户名"
+                    android:text="@={viewModle.userName}"
                     android:textColor="@color/textColor"
                     android:textColorHint="@color/textColorHint"
                     android:textSize="16sp" />
@@ -95,6 +96,7 @@
                     android:layout_weight="1"
                     android:background="@null"
                     android:hint="请输入密码"
+                    android:text="@={viewModle.pwd}"
                     android:inputType="textPassword"
                     android:textColor="@color/textColor"
                     android:textColorHint="@color/textColorHint"
@@ -137,7 +139,8 @@
                     android:background="?selectableItemBackground"
                     android:text="登录"
                     android:textColor="@color/white"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    binding:onClickCommand="@{viewModle.loginOnClickCommand}"/>
             </LinearLayout>
 
             <TextView
