@@ -3,20 +3,23 @@
     xmlns:binding="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <variable
             name="viewModle"
-            type="com.jianping.mymvvm.login.viewmodel.LoginViewModel" />
+            type="com.jianping.mymvvm.ui.login.LoginViewModel" />
     </data>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:background="@mipmap/login_back"
             android:scaleType="fitXY" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -59,13 +62,16 @@
                     android:text="@={viewModle.userName}"
                     android:textColor="@color/textColor"
                     android:textColorHint="@color/textColorHint"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    binding:onFocusChangeCommand="@{viewModle.onFocusChangeCommand}"/>
 
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:padding="6dp"
-                    android:src="@mipmap/clean_edit" />
+                    android:src="@mipmap/clean_edit"
+                    android:visibility="@{viewModle.clearUserName}"
+                    binding:onClickCommand="@{viewModle.clearUserNameOnClickCommand}" />
             </LinearLayout>
 
             <LinearLayout
@@ -96,8 +102,8 @@
                     android:layout_weight="1"
                     android:background="@null"
                     android:hint="请输入密码"
-                    android:text="@={viewModle.pwd}"
                     android:inputType="textPassword"
+                    android:text="@={viewModle.pwd}"
                     android:textColor="@color/textColor"
                     android:textColorHint="@color/textColorHint"
                     android:textSize="16sp" />
@@ -107,7 +113,8 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:padding="6dp"
-                    android:src="@mipmap/show_psw_press" />
+                    android:src="@mipmap/show_psw_press"
+                    binding:onClickCommand="@{viewModle.showPwdOnClickCommand}"/>
             </LinearLayout>
 
             <RelativeLayout
@@ -140,13 +147,13 @@
                     android:text="登录"
                     android:textColor="@color/white"
                     android:textSize="18sp"
-                    binding:onClickCommand="@{viewModle.loginOnClickCommand}"/>
+                    binding:onClickCommand="@{viewModle.loginOnClickCommand}" />
             </LinearLayout>
 
             <TextView
-                android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="模拟一个登陆操作,随便输入账号密码点击登录即可进入"
                 android:textColor="#EE1010" />
         </LinearLayout>

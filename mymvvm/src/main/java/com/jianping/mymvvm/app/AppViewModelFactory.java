@@ -6,7 +6,7 @@ import android.arch.lifecycle.ViewModelProvider;
 import android.support.annotation.NonNull;
 
 import com.jianping.mymvvm.data.MvvmRepository;
-import com.jianping.mymvvm.login.viewmodel.LoginViewModel;
+import com.jianping.mymvvm.ui.login.LoginViewModel;
 
 public class AppViewModelFactory extends ViewModelProvider.NewInstanceFactory {
     private volatile static AppViewModelFactory INSTANCE;

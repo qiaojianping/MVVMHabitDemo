@@ -41,6 +41,6 @@ public class HttpDataSourceImpl implements HttpDataSource {
 
     @Override
     public Observable<BaseResponse<DemoEntity>> demoPost(String catalog) {
-        return null;
+        return apiService.demoPost(catalog);
     }
 }
